@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <h1>Event Playing</h1>
+
+    <button onclick="changeColor()" id="btn-green">Click for:green</button>
+    <button onclick="makeRed()" id="btn-red">Click for:Red</button>
+
+    <h1>Add new Para </h1>
+    <div id="demo1">
+        <p id = 'demo'></p>
+        <button  id="addNum">(+)</button>
+        <button id="subPara">(-)</button>
+    </div>
+     
+    <!-- //input button text added  -->
+
+    <h1>Input field check</h1>
+    <div id="inputDemo">
+        <p id="demo2"></p>
+        <input id="name-field">
+        <button type="button" id="btn-update">Update</button>
+    </div>
+   
+    <!-- delete button  -->
+
+    <h1>Delete Items/ click/ focus/ blur/keyup </h1>
+
+    <p id="info-del">Hello JS</p>
+    <input type="text" id="delete-confirm" placeholder="Enter the Delete word">
+    <button type="button" id="btn-delete" disabled > Delete</button>
+
+    <script>
+        
+
+        document.getElementById('delete-confirm').addEventListener('focus', function(){
+           document.body.style.backgroundColor = 'red'
+        })
+        document.getElementById('delete-confirm').addEventListener('blur', function(){
+           document.body.style.backgroundColor = 'white'
+        })
+        document.getElementById('delete-confirm').addEventListener('keyup', function(event){
+          const getfieldValue = document.getElementById('btn-delete')
+
+            if(event.target.value == 'Delete'){
+                getfieldValue.removeAttribute('disabled')
+            }else{
+                getfieldValue.setAttribute('disabled', true)
+            }
+
+        })
+        // document.getElementById('delete-confirm').addEventListener('change', function(){
+        //    const getfieldValue = document.getElementById('delete-confirm')
+        //    console.log(getfieldValue.value)
+        // })
+    </script>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
